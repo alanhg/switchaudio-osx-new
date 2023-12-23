@@ -1,0 +1,46 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/alanhe/GitHub/switchaudio-osx-new/build/Release/SwitchAudioSource'
+relocations:
+  - { offsetInCU: 0x27, offset: 0x27, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002064, symSize: 0xA }
+  - { offsetInCU: 0x38, offset: 0x38, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002064, symSize: 0xA }
+  - { offsetInCU: 0x27, offset: 0xB7, size: 0x8, addend: 0x0, symName: _showUsage, symObjAddr: 0x0, symBinAddr: 0x100002070, symSize: 0x16 }
+  - { offsetInCU: 0xC5, offset: 0x155, size: 0x8, addend: 0x0, symName: _showUsage, symObjAddr: 0x0, symBinAddr: 0x100002070, symSize: 0x16 }
+  - { offsetInCU: 0xCD, offset: 0x15D, size: 0x8, addend: 0x0, symName: _runAudioSwitch, symObjAddr: 0x16, symBinAddr: 0x100002086, symSize: 0x6E2 }
+  - { offsetInCU: 0x15F, offset: 0x1EF, size: 0x8, addend: 0x0, symName: _runAudioSwitch, symObjAddr: 0x16, symBinAddr: 0x100002086, symSize: 0x6E2 }
+  - { offsetInCU: 0x415, offset: 0x4A5, size: 0x8, addend: 0x0, symName: _showAllDevices, symObjAddr: 0x6F8, symBinAddr: 0x100002768, symSize: 0x287 }
+  - { offsetInCU: 0x41D, offset: 0x4AD, size: 0x8, addend: 0x0, symName: _showCurrentlySelectedDeviceID, symObjAddr: 0x97F, symBinAddr: 0x1000029EF, symSize: 0xF3 }
+  - { offsetInCU: 0x587, offset: 0x617, size: 0x8, addend: 0x0, symName: _showCurrentlySelectedDeviceID, symObjAddr: 0x97F, symBinAddr: 0x1000029EF, symSize: 0xF3 }
+  - { offsetInCU: 0x58F, offset: 0x61F, size: 0x8, addend: 0x0, symName: _cycleNext, symObjAddr: 0xA72, symBinAddr: 0x100002AE2, symSize: 0x44 }
+  - { offsetInCU: 0x62B, offset: 0x6BB, size: 0x8, addend: 0x0, symName: _cycleNext, symObjAddr: 0xA72, symBinAddr: 0x100002AE2, symSize: 0x44 }
+  - { offsetInCU: 0x633, offset: 0x6C3, size: 0x8, addend: 0x0, symName: _getRequestedDeviceID, symObjAddr: 0xAB6, symBinAddr: 0x100002B26, symSize: 0x1D6 }
+  - { offsetInCU: 0x67D, offset: 0x70D, size: 0x8, addend: 0x0, symName: _getRequestedDeviceID, symObjAddr: 0xAB6, symBinAddr: 0x100002B26, symSize: 0x1D6 }
+  - { offsetInCU: 0x685, offset: 0x715, size: 0x8, addend: 0x0, symName: _deviceTypeName, symObjAddr: 0xC8C, symBinAddr: 0x100002CFC, symSize: 0x23 }
+  - { offsetInCU: 0x79B, offset: 0x82B, size: 0x8, addend: 0x0, symName: _deviceTypeName, symObjAddr: 0xC8C, symBinAddr: 0x100002CFC, symSize: 0x23 }
+  - { offsetInCU: 0x7A3, offset: 0x833, size: 0x8, addend: 0x0, symName: _getRequestedDeviceIDFromUIDSubstring, symObjAddr: 0xCAF, symBinAddr: 0x100002D1F, symSize: 0x214 }
+  - { offsetInCU: 0x7BC, offset: 0x84C, size: 0x8, addend: 0x0, symName: _getRequestedDeviceIDFromUIDSubstring, symObjAddr: 0xCAF, symBinAddr: 0x100002D1F, symSize: 0x214 }
+  - { offsetInCU: 0x7C4, offset: 0x854, size: 0x8, addend: 0x0, symName: _getDeviceUID, symObjAddr: 0xEC3, symBinAddr: 0x100002F33, symSize: 0xC6 }
+  - { offsetInCU: 0x8E0, offset: 0x970, size: 0x8, addend: 0x0, symName: _getDeviceUID, symObjAddr: 0xEC3, symBinAddr: 0x100002F33, symSize: 0xC6 }
+  - { offsetInCU: 0x8E8, offset: 0x978, size: 0x8, addend: 0x0, symName: _setMute, symObjAddr: 0xF89, symBinAddr: 0x100002FF9, symSize: 0x14E }
+  - { offsetInCU: 0x981, offset: 0xA11, size: 0x8, addend: 0x0, symName: _setMute, symObjAddr: 0xF89, symBinAddr: 0x100002FF9, symSize: 0x14E }
+  - { offsetInCU: 0x989, offset: 0xA19, size: 0x8, addend: 0x0, symName: _setAllDevicesByName, symObjAddr: 0x10D7, symBinAddr: 0x100003147, symSize: 0xAE }
+  - { offsetInCU: 0xA55, offset: 0xAE5, size: 0x8, addend: 0x0, symName: _setAllDevicesByName, symObjAddr: 0x10D7, symBinAddr: 0x100003147, symSize: 0xAE }
+  - { offsetInCU: 0xA5D, offset: 0xAED, size: 0x8, addend: 0x0, symName: _setDevice, symObjAddr: 0x1185, symBinAddr: 0x1000031F5, symSize: 0xD }
+  - { offsetInCU: 0xAB4, offset: 0xB44, size: 0x8, addend: 0x0, symName: _setDevice, symObjAddr: 0x1185, symBinAddr: 0x1000031F5, symSize: 0xD }
+  - { offsetInCU: 0xABC, offset: 0xB4C, size: 0x8, addend: 0x0, symName: _isAnInputDevice, symObjAddr: 0x1192, symBinAddr: 0x100003202, symSize: 0x52 }
+  - { offsetInCU: 0xADE, offset: 0xB6E, size: 0x8, addend: 0x0, symName: _isAnInputDevice, symObjAddr: 0x1192, symBinAddr: 0x100003202, symSize: 0x52 }
+  - { offsetInCU: 0xAE6, offset: 0xB76, size: 0x8, addend: 0x0, symName: _isAnOutputDevice, symObjAddr: 0x11E4, symBinAddr: 0x100003254, symSize: 0x4C }
+  - { offsetInCU: 0xB19, offset: 0xBA9, size: 0x8, addend: 0x0, symName: _isAnOutputDevice, symObjAddr: 0x11E4, symBinAddr: 0x100003254, symSize: 0x4C }
+  - { offsetInCU: 0xB21, offset: 0xBB1, size: 0x8, addend: 0x0, symName: _getDeviceType, symObjAddr: 0x1230, symBinAddr: 0x1000032A0, symSize: 0x79 }
+  - { offsetInCU: 0xB54, offset: 0xBE4, size: 0x8, addend: 0x0, symName: _getDeviceType, symObjAddr: 0x1230, symBinAddr: 0x1000032A0, symSize: 0x79 }
+  - { offsetInCU: 0xB5C, offset: 0xBEC, size: 0x8, addend: 0x0, symName: _getCurrentlySelectedDeviceID, symObjAddr: 0x12A9, symBinAddr: 0x100003319, symSize: 0x6B }
+  - { offsetInCU: 0xBB5, offset: 0xC45, size: 0x8, addend: 0x0, symName: _getCurrentlySelectedDeviceID, symObjAddr: 0x12A9, symBinAddr: 0x100003319, symSize: 0x6B }
+  - { offsetInCU: 0xBBD, offset: 0xC4D, size: 0x8, addend: 0x0, symName: _getDeviceName, symObjAddr: 0x1314, symBinAddr: 0x100003384, symSize: 0x72 }
+  - { offsetInCU: 0xC26, offset: 0xCB6, size: 0x8, addend: 0x0, symName: _getDeviceName, symObjAddr: 0x1314, symBinAddr: 0x100003384, symSize: 0x72 }
+  - { offsetInCU: 0xC2E, offset: 0xCBE, size: 0x8, addend: 0x0, symName: _getNextDeviceID, symObjAddr: 0x1386, symBinAddr: 0x1000033F6, symSize: 0x1C4 }
+  - { offsetInCU: 0xCA3, offset: 0xD33, size: 0x8, addend: 0x0, symName: _getNextDeviceID, symObjAddr: 0x1386, symBinAddr: 0x1000033F6, symSize: 0x1C4 }
+  - { offsetInCU: 0xCAB, offset: 0xD3B, size: 0x8, addend: 0x0, symName: _setOneDevice, symObjAddr: 0x154A, symBinAddr: 0x1000035BA, symSize: 0x93 }
+  - { offsetInCU: 0xDD1, offset: 0xE61, size: 0x8, addend: 0x0, symName: _setOneDevice, symObjAddr: 0x154A, symBinAddr: 0x1000035BA, symSize: 0x93 }
+  - { offsetInCU: 0xDD9, offset: 0xE69, size: 0x8, addend: 0x0, symName: _cycleNextForOneDevice, symObjAddr: 0x15DD, symBinAddr: 0x10000364D, symSize: 0x101 }
+  - { offsetInCU: 0xE62, offset: 0xEF2, size: 0x8, addend: 0x0, symName: _cycleNextForOneDevice, symObjAddr: 0x15DD, symBinAddr: 0x10000364D, symSize: 0x101 }
+...
