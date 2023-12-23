@@ -37,34 +37,35 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 
 typedef enum {
-	kAudioTypeUnknown = 0,
-	kAudioTypeInput   = 1,
-	kAudioTypeOutput  = 2,
-	kAudioTypeSystemOutput = 3,
-	kAudioTypeAll = 4
+    kAudioTypeUnknown = 0,
+    kAudioTypeInput   = 1,
+    kAudioTypeOutput  = 2,
+    kAudioTypeSystemOutput = 3,
+    kAudioTypeAirPlay = 4, // Added support for AirPlay device
+    kAudioTypeAll = 5 // Updated total number of device types
 } ASDeviceType;
 
 typedef enum {
-	kFormatHuman = 0,
-	kFormatCLI = 1,
-	kFormatJSON = 2,
+    kFormatHuman = 0,
+    kFormatCLI = 1,
+    kFormatJSON = 2,
 } ASOutputType;
 
 typedef enum {
-	kUnmute = 0,
-	kMute = 1,
-	kToggleMute = 2,
+    kUnmute = 0,
+    kMute = 1,
+    kToggleMute = 2,
 } ASMuteType;
 
 enum {
-	kFunctionSetDeviceByName = 1,
-	kFunctionShowHelp        = 2,
-	kFunctionShowAll         = 3,
-	kFunctionShowCurrent     = 4,
-	kFunctionCycleNext       = 5,
+    kFunctionSetDeviceByName = 1,
+    kFunctionShowHelp        = 2,
+    kFunctionShowAll         = 3,
+    kFunctionShowCurrent     = 4,
+    kFunctionCycleNext       = 5,
     kFunctionSetDeviceByID   = 6,
     kFunctionSetDeviceByUID  = 7,
-	kFunctionMute            = 8,
+    kFunctionMute            = 8,
 };
 
 

@@ -742,57 +742,43 @@ OSStatus setMute(ASDeviceType typeRequested, ASMuteType muteRequested) {
 
 void showAllDevices(ASDeviceType typeRequested, ASOutputType outputRequested) {
     UInt32 propertySize;
-    AudioObjectPropertyAddress propertyAddress;
-    AudioDeviceID dev_array[64];
-    int numberOfDevices = 0;
-    ASDeviceType device_type;
-    char deviceName[256];
-
-    propertyAddress.mSelector = kAudioHardwarePropertyDevices;
-    propertyAddress.mScope = kAudioObjectPropertyScopeGlobal;
-    propertyAddress.mElement = kAudioObjectPropertyElementMaster;
-
-    propertySize = 0;
+    AudioObjectPropertyAddress propertyAddress = {
+        kAudioHardwarePropertyDevices,
+        kAudioObjectPropertyScopeGlobal,
+        kAudioObjectPropertyElementMaster
+    };
+    
     AudioObjectGetPropertyDataSize(kAudioObjectSystemObject, &propertyAddress, 0, NULL, &propertySize);
-    numberOfDevices = propertySize / sizeof(AudioDeviceID);
-
-    AudioObjectGetPropertyData(kAudioObjectSystemObject, &propertyAddress, 0, NULL, &propertySize, dev_array);
-
-    for (int i = 0; i < numberOfDevices; ++i) {
-        switch (typeRequested) {
-            case kAudioTypeInput:
-                if (!isAnInputDevice(dev_array[i]))
-                    continue;
-                device_type = kAudioTypeInput;
-                break;
-            case kAudioTypeOutput:
-                if (!isAnOutputDevice(dev_array[i]))
-                    continue;
-                device_type = kAudioTypeOutput;
-                break;
-            case kAudioTypeSystemOutput:
-                device_type = getDeviceType(dev_array[i]);
-                if (device_type != kAudioTypeOutput)
-                    continue;
-                break;
-            default:
-                break;
-        }
-
-        getDeviceName(dev_array[i], deviceName);
-
-        switch (outputRequested) {
-            case kFormatHuman:
-                printf("%s\n", deviceName);
-                break;
-            case kFormatCLI:
-                printf("%s,%s,%u,%s\n", deviceName, deviceTypeName(device_type), dev_array[i], getDeviceUID(dev_array[i]));
-                break;
-            case kFormatJSON:
-                printf("{\"name\": \"%s\", \"type\": \"%s\", \"id\": \"%u\", \"uid\": \"%s\"}\n", deviceName, deviceTypeName(device_type), dev_array[i], getDeviceUID(dev_array[i]));
-                break;
-            default:
-                break;
+    
+    UInt32 deviceCount = propertySize / sizeof(AudioDeviceID);
+    AudioDeviceID *deviceIDs = (AudioDeviceID *)malloc(propertySize);
+    
+    AudioObjectGetPropertyData(kAudioObjectSystemObject, &propertyAddress, 0, NULL, &propertySize, deviceIDs);
+    
+    for (UInt32 i = 0; i < deviceCount; i++) {
+        ASDeviceType deviceType = getDeviceType(deviceIDs[i]);
+        
+        if (typeRequested == kAudioTypeAll || deviceType == typeRequested || (typeRequested == kAudioTypeAirPlay && deviceType == kAudioTypeOutput)) {
+            char deviceName[256];
+            getDeviceName(deviceIDs[i], deviceName);
+            
+            switch (outputRequested) {
+                case kFormatCLI:
+                    printf("%u\n", (unsigned int)deviceIDs[i]);
+                    break;
+                case kFormatJSON:
+                    printf("{\"id\": %u, \"name\": \"%s\", \"type\": \"%s\"}\n", (unsigned int)deviceIDs[i], deviceName, deviceTypeName(deviceType));
+                    break;
+                case kFormatHuman:
+                default:
+                    printf("Device ID: %u\n", (unsigned int)deviceIDs[i]);
+                    printf("Device Name: %s\n", deviceName);
+                    printf("Device Type: %s\n", deviceTypeName(deviceType));
+                    printf("\n");
+                    break;
+            }
         }
     }
+    
+    free(deviceIDs);
 }
